@@ -1,0 +1,28 @@
+on:
+  workflow_call:
+    inputs:
+      value:
+        required: true
+        type: string
+      measured_at:
+        required: true
+        type: string
+      service_id:
+        required: true
+        type: string
+
+    secrets:
+      idp_api_url:
+        required: true
+
+jobs:
+  post-coverage: 
+    runs-on: ubuntu-latest
+    steps:
+    - name: Post Code Coverage
+      uses: fjogeleit/http-request-action@v1
+      with:
+        url: ${{ secrets.idp_api_url }}/metrics/code_coverage
+        method: 'POST'
+        customHeaders: '{"Content-Type": "application/json"}'
+        data: '{"value": ${{ inputs.value }}, "service_id": ${{ inputs.service_id }}, "measured_at": ${{ inputs.measured_at }}}'
