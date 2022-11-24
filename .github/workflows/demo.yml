@@ -4,6 +4,6 @@ on:
   workflow_call:
 jobs:
   checkout:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, core-tools-euc1]
     steps:
     - uses: actions/checkout@v3
