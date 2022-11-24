@@ -17,7 +17,7 @@ on:
 
 jobs:
   post-coverage: 
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, core-tools-euc1]
     steps:
     - name: Post Code Coverage
       uses: fjogeleit/http-request-action@v1
