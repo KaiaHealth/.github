@@ -24,5 +24,4 @@ jobs:
       with:
         url: ${{ secrets.idp_api_url }}/metrics/code_coverage
         method: 'POST'
-        customHeaders: '{"Content-Type": "application/json"}'
         data: '{"value": ${{ inputs.value }}, "service_id": ${{ inputs.service_id }}, "measured_at": ${{ inputs.measured_at }}}'

@@ -1,5 +1,4 @@
-
-name: Test code coverage workflow
+name: Post IDP metrics code coverage workflow
 
 on:
   workflow_dispatch:
