@@ -1,0 +1,9 @@
+name: Demo
+
+on:
+  workflow_call:
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
