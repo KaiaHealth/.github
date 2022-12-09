@@ -4,9 +4,6 @@ on:
       value:
         required: true
         type: string
-      measured_at:
-        required: true
-        type: string
       service_id:
         required: true
         type: string
@@ -24,4 +21,4 @@ jobs:
       with:
         url: ${{ secrets.idp_api_url }}/metrics/code_coverage
         method: 'POST'
-        data: '{"value": ${{ inputs.value }}, "service_id": ${{ inputs.service_id }}, "measured_at": ${{ inputs.measured_at }}}'
+        data: '{"value": ${{ inputs.value }}, "service_id": ${{ inputs.service_id }}}'
