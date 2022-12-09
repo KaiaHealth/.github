@@ -6,9 +6,6 @@ on:
       value:
         description: 'Value of the code coverage, range from 0 to 100'
         required: true
-      measured_at:
-        description: 'Time at which the value was measured'
-        required: true
       service_id:
         description: 'The service_id of the associated service within IDP'
         required: true
@@ -19,5 +16,4 @@ jobs:
     with:
       value: ${{ inputs.value }}
       service_id: ${{ inputs.service_id }}
-      measured_at: ${{ inputs.measured_at }}
     secrets: inherit
