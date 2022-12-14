@@ -1,0 +1,24 @@
+# https://github.com/marketplace/actions/assign-size-label
+name: size-label
+on: pull_request
+jobs:
+  size-label:
+    # Dependabot triggered actions cannot access secrets
+    if: ${{ github.actor != 'dependabot[bot]' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: size-label
+        uses: "pascalgn/size-label-action@v0.4.3"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          IGNORED: "**/*.pbxproj\n**/*.xcscheme\n**/*.xib\n**/*.storyboard\n**/*.strings\n**/*.md\n**/*.html\n**/*.json\n**/*.lock\n**/*.resolved\n**/*.mlmodel"
+        with:
+          sizes: >
+            {
+              "0": "XS",
+              "20": "S",
+              "80": "M",
+              "240": "L",
+              "480": "XL",
+              "960": "XXL"
+            }
