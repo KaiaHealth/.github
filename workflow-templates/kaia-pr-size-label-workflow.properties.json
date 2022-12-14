@@ -1,0 +1,4 @@
+{
+  "name": "Label PR sizes",
+  "description": "Labels PRs based on their lines of codes changed"
+}
